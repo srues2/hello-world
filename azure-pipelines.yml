@@ -34,16 +34,15 @@ steps:
     ArtifactName: 'Databricks'
     publishLocation: 'Container'
 
-# Create the deployment artifact and then publish it to the
-# artifact repository.
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: false
+    rootFolderOrFile: '$(Build.Sourcesdirectory)'
+    includeRootFolder: true
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
-
 - task: PublishBuildArtifacts@1
   inputs:
-    ArtifactName: 'DatabricksBuild'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
