@@ -24,6 +24,10 @@ steps:
   inputs:
     script: 'pwd && ls'
 
+- task: CmdLine@2
+  inputs:
+    script: 'cd /home/vsts/work/1/s'
+
 
 - task: PublishBuildArtifacts@1
   inputs:
