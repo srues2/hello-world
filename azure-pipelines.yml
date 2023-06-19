@@ -33,3 +33,7 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'Databricks'
     publishLocation: 'Container'
+
+- task: CmdLine@2
+  inputs:
+    script: 'pwd && ls'
