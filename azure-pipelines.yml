@@ -28,12 +28,6 @@ steps:
   inputs:
     targetFolder: '$(Build.ArtifactStagingDirectory)'  
     
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'Databricks'
-    publishLocation: 'Container'
-
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(Build.Sourcesdirectory)'
@@ -44,5 +38,5 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
+    ArtifactName: 'Databricks'
     publishLocation: 'Container'
