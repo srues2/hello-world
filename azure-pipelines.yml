@@ -20,6 +20,11 @@ steps:
     python setup.py sdist 
   displayName: 'Artifact creation'
 
+- task: CmdLine@2
+  inputs:
+    script: 'pwd && ls'
+
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
